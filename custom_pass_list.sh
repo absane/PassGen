@@ -85,4 +85,4 @@ else
 	done
 fi
 
-cat /tmp/temp_passwords4 | egrep -v '(.*)([0-9]{5})' | sort -u > /tmp/pass
+cat /tmp/temp_passwords4 | egrep -v '(.*)([0-9]{5})' | sort -u > pass.txt
