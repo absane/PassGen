@@ -38,7 +38,7 @@ if [ ! -z "$1" ] ; then
 fi
 
 years=""
-for i in {-1..5}
+for i in {-1..2}
 do
 	years=$years$(date  --date="$i year ago" +"%Y")" "
 	years=$years$(date  --date="$i year ago" +"%y")" "
@@ -52,7 +52,7 @@ do
 	IFS=' ' read -ra var <<<"${years::-1}"
 	for v in "${var[@]}"
 	do
-		echo $i'!'$v >> /tmp/temp_passwords
+#		echo $i'!'$v >> /tmp/temp_passwords
 		echo $i$v >> /tmp/temp_passwords
 		echo $i$v"!" >> /tmp/temp_passwords
 	done
@@ -86,3 +86,25 @@ else
 fi
 
 cat /tmp/temp_passwords4 | egrep -v '(.*)([0-9]{5})' | sort -u > pass.txt
+
+
+
+# password
+# password1
+# Password
+# Password1
+# Password123
+# welcome1
+# welcome123
+# Username123
+# <username>123
+# <Season>Year
+# Passw0rd
+# Passw0rd1
+# <Comapny>[1-10]
+# <Company>123
+# changeme123
+# p@ssw0rd
+# p@ssw0rd1
+# p@ssw0rd123
+# Welcome<year>
